@@ -1,11 +1,11 @@
 from datetime import datetime
+import base64
+import io
 from dash import Dash, dcc, html, Output, Input
 import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
 import plotly.express as px
 import pandas as pd
-import base64
-import io
 
 dbc_css = ("https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates@V1.0.2/dbc.min.css")
 app = Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN, dbc_css])
