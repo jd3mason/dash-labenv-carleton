@@ -1,0 +1,11 @@
+services:
+    - type: web
+      name: dash-labenv-carleton
+      env: python
+      plan: free
+      region: ohio
+      buildCommand: "pip install -r requirements.txt"
+      startCommand: "gunicorn dash-labenv-carleton:server"
+      envVars:
+        - key: PYTHON_VERSION
+          value: 3.8.15
