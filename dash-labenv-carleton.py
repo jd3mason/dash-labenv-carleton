@@ -69,21 +69,24 @@ particle_size = html.Div(
 temperature_graph = html.Div(
     dcc.Graph(
         id='temperature-graph',
-        config={'displayModeBar': True, 'toImageButtonOptions': {'height': 675, 'width': 1101}}
+        config={'displayModeBar': True, 'toImageButtonOptions': {'height': 675, 'width': 1101}},
+        style={'height': '70vh'}
     )
 )
 
 hummidity_graph = html.Div(
     dcc.Graph(
         id='humidity-graph',
-        config={'displayModeBar': True, 'toImageButtonOptions': {'height': 675, 'width': 1101}}
+        config={'displayModeBar': True, 'toImageButtonOptions': {'height': 675, 'width': 1101}},
+        style={'height': '70vh'}
     )
 )
 
 particle_graph = html.Div(
     dcc.Graph(
         id='particle-graph',
-        config={'displayModeBar': True, 'toImageButtonOptions': {'height': 675, 'width': 1101}}
+        config={'displayModeBar': True, 'toImageButtonOptions': {'height': 675, 'width': 1101}},
+        style={'height': '63.5vh'}
     )
 )
 
@@ -183,7 +186,7 @@ def update_particlecounter_plot(particlecounter_data, particle_size_list):
         particle_size_list_sorted = sorted(particle_size_list.copy())
         if '10.0 \u03BCm' in particle_size_list_sorted: particle_size_list_sorted.remove('10.0 \u03BCm'); particle_size_list_sorted.append('10.0 \u03BCm')
         dff = df.loc[:, particle_size_list_sorted]
-        particle_color_map = {'0.3 \u03BCm': 'red', '0.5 \u03BCm': 'cornflowerblue', '1.0 \u03BCm': 'black', '2.0 \u03BCm': 'green', '5.0 \u03BCm': 'orange','10.0 \u03BCm': 'purple'}
+        particle_color_map = {'0.3 \u03BCm': 'red', '0.5 \u03BCm': 'cornflowerblue', '1.0 \u03BCm': 'gold', '2.0 \u03BCm': 'mediumseagreen', '5.0 \u03BCm': 'purple','10.0 \u03BCm': 'darkorange'}
         date_buttons = [{'count': 1, 'step': 'day', 'stepmode': 'backward', 'label': '1D'},
                         {'count': 5, 'step': 'day', 'stepmode': 'backward', 'label': '5D'},
                         {'count': 1, 'step': 'month', 'stepmode': 'backward', 'label': '1M'},
